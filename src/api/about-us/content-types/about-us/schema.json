@@ -1,0 +1,78 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_uses",
+  "info": {
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "about us",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "seo.seo",
+      "required": true
+    },
+    "aboutUsTitle": {
+      "displayName": "aboutUsTitle",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "about-us-title.about-us-title"
+    },
+    "aboutusHeader": {
+      "displayName": "aboutusHeader",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "aboutus-header.aboutus-header",
+      "required": true
+    },
+    "AboutUsMissionVision": {
+      "displayName": "AboutUsMissionVision",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "about-us-mission-vision.about-us-mission-vision",
+      "required": true
+    },
+    "mileStoones": {
+      "displayName": "milestones",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "mile-stones.milestones",
+      "required": true
+    }
+  }
+}

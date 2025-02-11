@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_about_us_title_about_us_titles",
+  "info": {
+    "displayName": "aboutUsTitle",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

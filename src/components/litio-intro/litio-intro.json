@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_litio_intro_litio_intros",
+  "info": {
+    "displayName": "litioIntro",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

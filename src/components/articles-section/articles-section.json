@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_articles_section_articles_sections",
+  "info": {
+    "displayName": "articlesSection",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "articls": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::articl.articl"
+    }
+  }
+}

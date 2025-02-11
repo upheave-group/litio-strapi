@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_rio_calculator_rio_calculators",
+  "info": {
+    "displayName": "RIOCalculator",
+    "icon": "connector"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "lable": {
+      "type": "text",
+      "required": true
+    },
+    "result": {
+      "type": "text",
+      "required": true
+    },
+    "varaible": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}

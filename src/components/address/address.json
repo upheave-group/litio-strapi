@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_address_addresses",
+  "info": {
+    "displayName": "address",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "cityCountry": {
+      "type": "text",
+      "required": true
+    },
+    "street": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

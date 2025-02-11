@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_about_us_mission_vision_about_us_mission_visions",
+  "info": {
+    "displayName": "AboutUsMissionVision",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "missionStatment": {
+      "type": "text",
+      "required": true
+    },
+    "visionSatment": {
+      "type": "text",
+      "required": true
+    },
+    "missionImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

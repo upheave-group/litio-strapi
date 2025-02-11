@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_mile_stones_milestones",
+  "info": {
+    "displayName": "milestones",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "milestone": {
+      "displayName": "milestone",
+      "type": "component",
+      "repeatable": false,
+      "component": "milestone.milestone"
+    },
+    "projectTwo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "milestone.milestone"
+    },
+    "ProjectThree": {
+      "type": "component",
+      "repeatable": false,
+      "component": "milestone.milestone"
+    }
+  }
+}

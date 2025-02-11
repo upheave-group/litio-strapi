@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_aboutus_header_aboutus_headers",
+  "info": {
+    "displayName": "aboutusHeader",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "AboutUsHeaderImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "numberOfProjects": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

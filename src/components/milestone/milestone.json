@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_milestone_milestones",
+  "info": {
+    "displayName": "milestone",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "projectOne": {
+      "type": "text",
+      "required": true
+    },
+    "Year": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
