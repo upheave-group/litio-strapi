@@ -19,6 +19,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::service.service"
+    },
+    "serviceProductCard": {
+      "displayName": "product-service card",
+      "type": "component",
+      "repeatable": true,
+      "component": "service.product-service-card"
     }
   }
 }

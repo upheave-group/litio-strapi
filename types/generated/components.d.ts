@@ -167,12 +167,14 @@ export interface ProductsSectionProductsSection extends Struct.ComponentSchema {
 export interface RioCalculatorRioCalculator extends Struct.ComponentSchema {
   collectionName: 'components_rio_calculator_rio_calculators';
   info: {
+    description: '';
     displayName: 'RIOCalculator';
     icon: 'connector';
   };
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     lable: Schema.Attribute.Text & Schema.Attribute.Required;
+    products: Schema.Attribute.Component<'service.product-service-card', true>;
     result: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
     varaible: Schema.Attribute.Decimal & Schema.Attribute.Required;
@@ -188,6 +190,10 @@ export interface SectionTileSectionTitle extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.String & Schema.Attribute.Required;
+    serviceProductCard: Schema.Attribute.Component<
+      'service.product-service-card',
+      true
+    >;
     services: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
   };
@@ -203,6 +209,20 @@ export interface SeoSeo extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface ServiceProductServiceCard extends Struct.ComponentSchema {
+  collectionName: 'components_service_product_service_cards';
+  info: {
+    displayName: 'product-service card';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    title: Schema.Attribute.Text & Schema.Attribute.Required;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -224,6 +244,7 @@ declare module '@strapi/strapi' {
       'rio-calculator.rio-calculator': RioCalculatorRioCalculator;
       'section-tile.section-title': SectionTileSectionTitle;
       'seo.seo': SeoSeo;
+      'service.product-service-card': ServiceProductServiceCard;
     }
   }
 }

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_service_product_service_cards",
+  "info": {
+    "displayName": "product-service card",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}
