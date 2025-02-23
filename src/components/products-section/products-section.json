@@ -19,6 +19,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product.product"
+    },
+    "productsCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service.product-service-card",
+      "required": true
     }
   }
 }

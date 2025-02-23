@@ -26,11 +26,6 @@
     "varaible": {
       "type": "decimal",
       "required": true
-    },
-    "products": {
-      "type": "component",
-      "repeatable": true,
-      "component": "service.product-service-card"
     }
   }
 }

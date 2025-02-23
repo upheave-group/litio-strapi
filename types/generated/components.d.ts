@@ -160,6 +160,11 @@ export interface ProductsSectionProductsSection extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
+    productsCard: Schema.Attribute.Component<
+      'service.product-service-card',
+      true
+    > &
+      Schema.Attribute.Required;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
@@ -174,7 +179,6 @@ export interface RioCalculatorRioCalculator extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     lable: Schema.Attribute.Text & Schema.Attribute.Required;
-    products: Schema.Attribute.Component<'service.product-service-card', true>;
     result: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
     varaible: Schema.Attribute.Decimal & Schema.Attribute.Required;

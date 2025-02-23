@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "products_pages",
+  "info": {
+    "singularName": "products-page",
+    "pluralName": "products-pages",
+    "displayName": "products page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seoTitle": {
+      "type": "text",
+      "required": true
+    },
+    "seoDescription": {
+      "type": "text",
+      "required": true
+    },
+    "productsType": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service.product-service-card"
+    }
+  }
+}
