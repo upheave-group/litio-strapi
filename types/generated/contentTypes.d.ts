@@ -369,13 +369,12 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
-  collectionName: 'about_uses';
+export interface ApiAboutUsPageAboutUsPage extends Struct.SingleTypeSchema {
+  collectionName: 'about_us_pages';
   info: {
-    description: '';
-    displayName: 'about us';
-    pluralName: 'about-uses';
-    singularName: 'about-us';
+    displayName: 'about us page';
+    pluralName: 'about-us-pages';
+    singularName: 'about-us-page';
   };
   options: {
     draftAndPublish: true;
@@ -390,7 +389,15 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
       'aboutus-header.aboutus-header',
       false
     > &
-      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    AboutUsHeader: Schema.Attribute.Component<
+      'about-us-section.about-us-section',
+      false
+    > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -398,16 +405,6 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
       }>;
     AboutUsMissionVision: Schema.Attribute.Component<
       'about-us-mission-vision.about-us-mission-vision',
-      false
-    > &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    aboutUsTitle: Schema.Attribute.Component<
-      'about-us-title.about-us-title',
       false
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -421,18 +418,30 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::about-us.about-us'
+      'api::about-us-page.about-us-page'
     >;
-    mileStoones: Schema.Attribute.Component<'mile-stones.milestones', false> &
-      Schema.Attribute.Required &
+    milestones: Schema.Attribute.Component<'milestone.milestone', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false> &
+    seoDescription: Schema.Attribute.Text &
       Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seoTitle: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sologan: Schema.Attribute.Component<'sologan.sologan', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1601,7 +1610,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::articl.articl': ApiArticlArticl;
       'api::article-detail.article-detail': ApiArticleDetailArticleDetail;
       'api::contact-us.contact-us': ApiContactUsContactUs;

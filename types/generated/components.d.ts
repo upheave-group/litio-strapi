@@ -14,6 +14,18 @@ export interface AboutUsMissionVisionAboutUsMissionVision
   };
 }
 
+export interface AboutUsSectionAboutUsSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_section_about_us_sections';
+  info: {
+    displayName: 'About us section';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 export interface AboutUsTitleAboutUsTitle extends Struct.ComponentSchema {
   collectionName: 'components_about_us_title_about_us_titles';
   info: {
@@ -230,10 +242,23 @@ export interface ServiceProductServiceCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SologanSologan extends Struct.ComponentSchema {
+  collectionName: 'components_sologan_sologans';
+  info: {
+    displayName: 'sologan';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'about-us-mission-vision.about-us-mission-vision': AboutUsMissionVisionAboutUsMissionVision;
+      'about-us-section.about-us-section': AboutUsSectionAboutUsSection;
       'about-us-title.about-us-title': AboutUsTitleAboutUsTitle;
       'aboutus-header.aboutus-header': AboutusHeaderAboutusHeader;
       'address.address': AddressAddress;
@@ -249,6 +274,7 @@ declare module '@strapi/strapi' {
       'section-tile.section-title': SectionTileSectionTitle;
       'seo.seo': SeoSeo;
       'service.product-service-card': ServiceProductServiceCard;
+      'sologan.sologan': SologanSologan;
     }
   }
 }

@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "about_uses",
+  "collectionName": "about_us_pages",
   "info": {
-    "singularName": "about-us",
-    "pluralName": "about-uses",
-    "displayName": "about us",
-    "description": ""
+    "singularName": "about-us-page",
+    "pluralName": "about-us-pages",
+    "displayName": "about us page"
   },
   "options": {
     "draftAndPublish": true
@@ -16,19 +15,26 @@
     }
   },
   "attributes": {
-    "seo": {
-      "type": "component",
-      "repeatable": false,
+    "seoTitle": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "seo.seo",
+      "type": "text",
       "required": true
     },
-    "aboutUsTitle": {
-      "displayName": "aboutUsTitle",
+    "seoDescription": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "required": true
+    },
+    "AboutUsHeader": {
+      "displayName": "About us section",
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -36,10 +42,9 @@
           "localized": true
         }
       },
-      "component": "about-us-title.about-us-title"
+      "component": "about-us-section.about-us-section"
     },
     "aboutusHeader": {
-      "displayName": "aboutusHeader",
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -47,11 +52,9 @@
           "localized": true
         }
       },
-      "component": "aboutus-header.aboutus-header",
-      "required": true
+      "component": "aboutus-header.aboutus-header"
     },
     "AboutUsMissionVision": {
-      "displayName": "AboutUsMissionVision",
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -59,11 +62,20 @@
           "localized": true
         }
       },
-      "component": "about-us-mission-vision.about-us-mission-vision",
-      "required": true
+      "component": "about-us-mission-vision.about-us-mission-vision"
     },
-    "mileStoones": {
-      "displayName": "milestones",
+    "milestones": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "milestone.milestone"
+    },
+    "sologan": {
+      "displayName": "sologan",
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -71,8 +83,7 @@
           "localized": true
         }
       },
-      "component": "mile-stones.milestones",
-      "required": true
+      "component": "sologan.sologan"
     }
   }
 }

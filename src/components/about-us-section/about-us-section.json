@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_us_section_about_us_sections",
+  "info": {
+    "displayName": "About us section",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
