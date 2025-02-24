@@ -75,7 +75,10 @@ export interface ArticlesSectionArticlesSection extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    articls: Schema.Attribute.Relation<'oneToMany', 'api::articl.articl'>;
+    article_details: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::article-detail.article-detail'
+    >;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
   };
@@ -152,12 +155,14 @@ export interface MilestoneMilestone extends Struct.ComponentSchema {
 export interface ProductProduct extends Struct.ComponentSchema {
   collectionName: 'components_product_products';
   info: {
+    description: '';
     displayName: 'product';
     icon: 'bulletList';
   };
   attributes: {
     description: Schema.Attribute.String & Schema.Attribute.Required;
     productName: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    productPDF: Schema.Attribute.Media<'files'> & Schema.Attribute.Required;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
@@ -254,6 +259,22 @@ export interface SologanSologan extends Struct.ComponentSchema {
   };
 }
 
+export interface TestimonialsTestimonials extends Struct.ComponentSchema {
+  collectionName: 'components_testimonials_testimonials';
+  info: {
+    displayName: 'Testimonials';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    Testimonials: Schema.Attribute.Component<
+      'service.product-service-card',
+      true
+    >;
+    title: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -275,6 +296,7 @@ declare module '@strapi/strapi' {
       'seo.seo': SeoSeo;
       'service.product-service-card': ServiceProductServiceCard;
       'sologan.sologan': SologanSologan;
+      'testimonials.testimonials': TestimonialsTestimonials;
     }
   }
 }

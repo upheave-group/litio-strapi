@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_testimonials_testimonials",
+  "info": {
+    "displayName": "Testimonials",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "Testimonials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service.product-service-card"
+    }
+  }
+}
