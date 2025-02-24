@@ -386,17 +386,8 @@ export interface ApiAboutUsPageAboutUsPage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    aboutusHeader: Schema.Attribute.Component<
-      'aboutus-header.aboutus-header',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    AboutUsHeader: Schema.Attribute.Component<
-      'about-us-section.about-us-section',
+    aboutUsHeaderSection: Schema.Attribute.Component<
+      'about-us-header-section.about-us-header-section',
       false
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -408,6 +399,16 @@ export interface ApiAboutUsPageAboutUsPage extends Struct.SingleTypeSchema {
       'about-us-mission-vision.about-us-mission-vision',
       false
     > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    AboutUsPageHeader: Schema.Attribute.Component<
+      'about-us-section.about-us-section',
+      false
+    > &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

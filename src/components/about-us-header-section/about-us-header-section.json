@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_about_us_header_section_about_us_header_sections",
+  "info": {
+    "displayName": "About us  header section",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "list": {
+      "type": "json"
+    },
+    "numberOfProjects": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

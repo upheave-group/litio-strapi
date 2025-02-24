@@ -34,7 +34,7 @@
       "type": "text",
       "required": true
     },
-    "AboutUsHeader": {
+    "AboutUsPageHeader": {
       "displayName": "About us section",
       "type": "component",
       "repeatable": false,
@@ -43,17 +43,8 @@
           "localized": true
         }
       },
-      "component": "about-us-section.about-us-section"
-    },
-    "aboutusHeader": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "aboutus-header.aboutus-header"
+      "component": "about-us-section.about-us-section",
+      "required": true
     },
     "AboutUsMissionVision": {
       "type": "component",
@@ -96,6 +87,17 @@
         }
       },
       "component": "testimonials.testimonials"
+    },
+    "aboutUsHeaderSection": {
+      "displayName": "About us  header section",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "about-us-header-section.about-us-header-section"
     }
   }
 }

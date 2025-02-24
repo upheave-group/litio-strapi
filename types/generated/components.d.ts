@@ -1,5 +1,21 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AboutUsHeaderSectionAboutUsHeaderSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_header_section_about_us_header_sections';
+  info: {
+    displayName: 'About us  header section';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    list: Schema.Attribute.JSON;
+    numberOfProjects: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 export interface AboutUsMissionVisionAboutUsMissionVision
   extends Struct.ComponentSchema {
   collectionName: 'components_about_us_mission_vision_about_us_mission_visions';
@@ -278,6 +294,7 @@ export interface TestimonialsTestimonials extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'about-us-header-section.about-us-header-section': AboutUsHeaderSectionAboutUsHeaderSection;
       'about-us-mission-vision.about-us-mission-vision': AboutUsMissionVisionAboutUsMissionVision;
       'about-us-section.about-us-section': AboutUsSectionAboutUsSection;
       'about-us-title.about-us-title': AboutUsTitleAboutUsTitle;
