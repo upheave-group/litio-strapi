@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "litio_battery_pages",
+  "info": {
+    "singularName": "litio-battery-page",
+    "pluralName": "litio-battery-pages",
+    "displayName": "litio battery page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seoTitle": {
+      "type": "text",
+      "required": true
+    },
+    "seoDescription": {
+      "type": "text",
+      "required": true
+    },
+    "residential": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service.product-service-card",
+      "required": true
+    },
+    "industrial": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service.product-service-card"
+    },
+    "title": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

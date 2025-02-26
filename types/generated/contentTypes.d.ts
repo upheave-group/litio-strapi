@@ -768,6 +768,79 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiIndustrialBatteriesPageIndustrialBatteriesPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'industrial_batteries_pages';
+  info: {
+    displayName: 'industrial batteries page';
+    pluralName: 'industrial-batteries-pages';
+    singularName: 'industrial-batteries-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::industrial-batteries-page.industrial-batteries-page'
+    > &
+      Schema.Attribute.Private;
+    products: Schema.Attribute.Component<'service.product-service-card', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.Text & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLitioBatteryPageLitioBatteryPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'litio_battery_pages';
+  info: {
+    displayName: 'litio battery page';
+    pluralName: 'litio-battery-pages';
+    singularName: 'litio-battery-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    industrial: Schema.Attribute.Component<
+      'service.product-service-card',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::litio-battery-page.litio-battery-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    residential: Schema.Attribute.Component<
+      'service.product-service-card',
+      false
+    > &
+      Schema.Attribute.Required;
+    seoDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    seoTitle: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.Text & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -1000,6 +1073,72 @@ export interface ApiQouteQoute extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+  };
+}
+
+export interface ApiResidentialBatteriesPageResidentialBatteriesPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'residential_batteries_pages';
+  info: {
+    displayName: 'residential batteries page';
+    pluralName: 'residential-batteries-pages';
+    singularName: 'residential-batteries-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::residential-batteries-page.residential-batteries-page'
+    >;
+    products: Schema.Attribute.Component<'service.product-service-card', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seoTitle: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1729,10 +1868,13 @@ declare module '@strapi/strapi' {
       'api::article-detail.article-detail': ApiArticleDetailArticleDetail;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::industrial-batteries-page.industrial-batteries-page': ApiIndustrialBatteriesPageIndustrialBatteriesPage;
+      'api::litio-battery-page.litio-battery-page': ApiLitioBatteryPageLitioBatteryPage;
       'api::product.product': ApiProductProduct;
       'api::products-detail-page.products-detail-page': ApiProductsDetailPageProductsDetailPage;
       'api::products-page.products-page': ApiProductsPageProductsPage;
       'api::qoute.qoute': ApiQouteQoute;
+      'api::residential-batteries-page.residential-batteries-page': ApiResidentialBatteriesPageResidentialBatteriesPage;
       'api::service-detail-page.service-detail-page': ApiServiceDetailPageServiceDetailPage;
       'api::service-page.service-page': ApiServicePageServicePage;
       'api::service.service': ApiServiceService;

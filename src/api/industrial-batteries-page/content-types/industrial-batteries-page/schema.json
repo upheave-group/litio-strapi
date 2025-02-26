@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "industrial_batteries_pages",
+  "info": {
+    "singularName": "industrial-batteries-page",
+    "pluralName": "industrial-batteries-pages",
+    "displayName": "industrial batteries page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seoTitle": {
+      "type": "text",
+      "required": true
+    },
+    "seoDescription": {
+      "type": "text"
+    },
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "products": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service.product-service-card"
+    }
+  }
+}
