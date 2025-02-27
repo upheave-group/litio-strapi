@@ -1081,6 +1081,7 @@ export interface ApiResidentialBatteriesPageResidentialBatteriesPage
   extends Struct.SingleTypeSchema {
   collectionName: 'residential_batteries_pages';
   info: {
+    description: '';
     displayName: 'residential batteries page';
     pluralName: 'residential-batteries-pages';
     singularName: 'residential-batteries-page';
@@ -1109,7 +1110,7 @@ export interface ApiResidentialBatteriesPageResidentialBatteriesPage
       'oneToMany',
       'api::residential-batteries-page.residential-batteries-page'
     >;
-    products: Schema.Attribute.Component<'service.product-service-card', true> &
+    products: Schema.Attribute.Component<'product.product', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

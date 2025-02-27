@@ -4,7 +4,8 @@
   "info": {
     "singularName": "residential-batteries-page",
     "pluralName": "residential-batteries-pages",
-    "displayName": "residential batteries page"
+    "displayName": "residential batteries page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -59,7 +60,7 @@
           "localized": true
         }
       },
-      "component": "service.product-service-card"
+      "component": "product.product"
     }
   }
 }
