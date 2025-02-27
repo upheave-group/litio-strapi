@@ -4,7 +4,8 @@
   "info": {
     "singularName": "industrial-batteries-page",
     "pluralName": "industrial-batteries-pages",
-    "displayName": "industrial batteries page"
+    "displayName": "industrial batteries page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -29,7 +30,7 @@
     "products": {
       "type": "component",
       "repeatable": true,
-      "component": "service.product-service-card"
+      "component": "product.product"
     }
   }
 }

@@ -772,6 +772,7 @@ export interface ApiIndustrialBatteriesPageIndustrialBatteriesPage
   extends Struct.SingleTypeSchema {
   collectionName: 'industrial_batteries_pages';
   info: {
+    description: '';
     displayName: 'industrial batteries page';
     pluralName: 'industrial-batteries-pages';
     singularName: 'industrial-batteries-page';
@@ -790,7 +791,7 @@ export interface ApiIndustrialBatteriesPageIndustrialBatteriesPage
       'api::industrial-batteries-page.industrial-batteries-page'
     > &
       Schema.Attribute.Private;
-    products: Schema.Attribute.Component<'service.product-service-card', true>;
+    products: Schema.Attribute.Component<'product.product', true>;
     publishedAt: Schema.Attribute.DateTime;
     seoDescription: Schema.Attribute.Text;
     seoTitle: Schema.Attribute.Text & Schema.Attribute.Required;
