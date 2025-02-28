@@ -15,10 +15,10 @@
       "type": "text",
       "required": true
     },
-    "article_details": {
+    "articles_details": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::article-detail.article-detail"
+      "target": "api::articles-detail.articles-detail"
     }
   }
 }

@@ -519,14 +519,13 @@ export interface ApiArticlArticl extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiArticleDetailArticleDetail
+export interface ApiArticlesDetailArticlesDetail
   extends Struct.CollectionTypeSchema {
-  collectionName: 'article_details';
+  collectionName: 'articles_details';
   info: {
-    description: '';
-    displayName: 'article detail';
-    pluralName: 'article-details';
-    singularName: 'article-detail';
+    displayName: 'articles detail';
+    pluralName: 'articles-details';
+    singularName: 'articles-detail';
   };
   options: {
     draftAndPublish: true;
@@ -537,67 +536,36 @@ export interface ApiArticleDetailArticleDetail
     };
   };
   attributes: {
+    coverImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    description1: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    description3: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    iamges: Schema.Attribute.Media<'images', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    list: Schema.Attribute.JSON &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    listTitle: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::article-detail.article-detail'
+      'api::articles-detail.articles-detail'
     >;
-    mainImage: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.Required &
+    Paragraph: Schema.Attribute.Component<'parag.paragraph', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID &
+    seoDescription: Schema.Attribute.Text &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    title: Schema.Attribute.Text &
+    seoTitle: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1867,7 +1835,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::articl.articl': ApiArticlArticl;
-      'api::article-detail.article-detail': ApiArticleDetailArticleDetail;
+      'api::articles-detail.articles-detail': ApiArticlesDetailArticlesDetail;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::industrial-batteries-page.industrial-batteries-page': ApiIndustrialBatteriesPageIndustrialBatteriesPage;

@@ -91,9 +91,9 @@ export interface ArticlesSectionArticlesSection extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    article_details: Schema.Attribute.Relation<
+    articles_details: Schema.Attribute.Relation<
       'oneToMany',
-      'api::article-detail.article-detail'
+      'api::articles-detail.articles-detail'
     >;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
@@ -165,6 +165,19 @@ export interface MilestoneMilestone extends Struct.ComponentSchema {
   attributes: {
     projectOne: Schema.Attribute.Text & Schema.Attribute.Required;
     Year: Schema.Attribute.Integer & Schema.Attribute.Required;
+  };
+}
+
+export interface ParagParagraph extends Struct.ComponentSchema {
+  collectionName: 'components_parag_paragraphs';
+  info: {
+    displayName: 'paragraph';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.Text;
   };
 }
 
@@ -306,6 +319,7 @@ declare module '@strapi/strapi' {
       'litio-intro.litio-intro': LitioIntroLitioIntro;
       'mile-stones.milestones': MileStonesMilestones;
       'milestone.milestone': MilestoneMilestone;
+      'parag.paragraph': ParagParagraph;
       'product.product': ProductProduct;
       'products-section.products-section': ProductsSectionProductsSection;
       'rio-calculator.rio-calculator': RioCalculatorRioCalculator;

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_parag_paragraphs",
+  "info": {
+    "displayName": "paragraph",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    }
+  }
+}
