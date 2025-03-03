@@ -11,7 +11,11 @@
       "type": "text",
       "required": true
     },
-    "description": {
+    "styledPart1": {
+      "type": "text",
+      "required": true
+    },
+    "styledPart2": {
       "type": "text"
     }
   }

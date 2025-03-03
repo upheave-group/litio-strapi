@@ -138,7 +138,8 @@ export interface LitioIntroLitioIntro extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    styledPart1: Schema.Attribute.Text & Schema.Attribute.Required;
+    styledPart2: Schema.Attribute.Text;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
