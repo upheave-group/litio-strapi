@@ -191,7 +191,10 @@ export interface ProductProduct extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.String & Schema.Attribute.Required;
-    productName: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    extraDescription: Schema.Attribute.Text;
+    oldPrice: Schema.Attribute.Text;
+    price: Schema.Attribute.Text;
+    productImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     productPDF: Schema.Attribute.Media<'files'> & Schema.Attribute.Required;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
   };

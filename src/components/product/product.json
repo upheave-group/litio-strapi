@@ -11,7 +11,7 @@
       "type": "text",
       "required": true
     },
-    "productName": {
+    "productImage": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -24,12 +24,22 @@
       "required": true
     },
     "productPDF": {
-      "allowedTypes": [
-        "files"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "price": {
+      "type": "text",
+      "required": false
+    },
+    "extraDescription": {
+      "type": "text"
+    },
+    "oldPrice": {
+      "type": "text"
     }
   }
 }
