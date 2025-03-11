@@ -537,6 +537,12 @@ export interface ApiArticlesDetailArticlesDetail
     };
   };
   attributes: {
+    author: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     category: Schema.Attribute.Component<'categories.categories', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -553,6 +559,12 @@ export interface ApiArticlesDetailArticlesDetail
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    date: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Gallery: Schema.Attribute.Media<'images', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
