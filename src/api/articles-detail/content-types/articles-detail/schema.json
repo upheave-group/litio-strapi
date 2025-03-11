@@ -4,7 +4,8 @@
   "info": {
     "singularName": "articles-detail",
     "pluralName": "articles-details",
-    "displayName": "articles detail"
+    "displayName": "articles detail",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -34,17 +35,17 @@
       "required": true
     },
     "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "required": true
+      }
     },
     "Paragraph": {
       "displayName": "paragraph",
@@ -56,6 +57,27 @@
         }
       },
       "component": "parag.paragraph"
+    },
+    "category": {
+      "displayName": "categories",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "categories.categories"
+    },
+    "tag": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "categories.categories"
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "service-detail-page",
     "pluralName": "service-detail-pages",
-    "displayName": "service detail page"
+    "displayName": "service detail page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -33,17 +34,17 @@
       "required": true
     },
     "serviceImages": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "required": true
+      }
     },
     "serviceId": {
       "pluginOptions": {
@@ -88,6 +89,25 @@
       },
       "type": "json",
       "required": true
+    },
+    "HowitWorksDetails": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "benefit": {
+      "displayName": "benefits",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "benefits.benefits"
     }
   }
 }

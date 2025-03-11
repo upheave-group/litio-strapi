@@ -4,10 +4,12 @@ export interface AboutUsHeaderSectionAboutUsHeaderSection
   extends Struct.ComponentSchema {
   collectionName: 'components_about_us_header_section_about_us_header_sections';
   info: {
+    description: '';
     displayName: 'About us  header section';
     icon: 'bulletList';
   };
   attributes: {
+    aboutuslist: Schema.Attribute.Component<'list.list', true>;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     list: Schema.Attribute.JSON;
@@ -100,6 +102,17 @@ export interface ArticlesSectionArticlesSection extends Struct.ComponentSchema {
   };
 }
 
+export interface BenefitsBenefits extends Struct.ComponentSchema {
+  collectionName: 'components_benefits_benefits';
+  info: {
+    displayName: 'benefits';
+    icon: 'bulletList';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+  };
+}
+
 export interface ButtonButton extends Struct.ComponentSchema {
   collectionName: 'components_button_buttons';
   info: {
@@ -109,6 +122,17 @@ export interface ButtonButton extends Struct.ComponentSchema {
   attributes: {
     title: Schema.Attribute.Text & Schema.Attribute.Required;
     url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface CategoriesCategories extends Struct.ComponentSchema {
+  collectionName: 'components_categories_categories';
+  info: {
+    displayName: 'categories';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Schema.Attribute.Text;
   };
 }
 
@@ -127,6 +151,17 @@ export interface ExperienceSectionExperienceSection
       Schema.Attribute.Required;
     numberOfYears: Schema.Attribute.Integer & Schema.Attribute.Required;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface ListList extends Struct.ComponentSchema {
+  collectionName: 'components_list_lists';
+  info: {
+    displayName: 'list';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Schema.Attribute.Text;
   };
 }
 
@@ -318,8 +353,11 @@ declare module '@strapi/strapi' {
       'aboutus-header.aboutus-header': AboutusHeaderAboutusHeader;
       'address.address': AddressAddress;
       'articles-section.articles-section': ArticlesSectionArticlesSection;
+      'benefits.benefits': BenefitsBenefits;
       'button.button': ButtonButton;
+      'categories.categories': CategoriesCategories;
       'experience-section.experience-section': ExperienceSectionExperienceSection;
+      'list.list': ListList;
       'litio-intro.litio-intro': LitioIntroLitioIntro;
       'mile-stones.milestones': MileStonesMilestones;
       'milestone.milestone': MilestoneMilestone;

@@ -2,7 +2,8 @@
   "collectionName": "components_about_us_header_section_about_us_header_sections",
   "info": {
     "displayName": "About us  header section",
-    "icon": "bulletList"
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,12 +16,12 @@
       "required": true
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "list": {
       "type": "json"
@@ -28,6 +29,12 @@
     "numberOfProjects": {
       "type": "text",
       "required": true
+    },
+    "aboutuslist": {
+      "displayName": "list",
+      "type": "component",
+      "repeatable": true,
+      "component": "list.list"
     }
   }
 }

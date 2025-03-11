@@ -523,6 +523,7 @@ export interface ApiArticlesDetailArticlesDetail
   extends Struct.CollectionTypeSchema {
   collectionName: 'articles_details';
   info: {
+    description: '';
     displayName: 'articles detail';
     pluralName: 'articles-details';
     singularName: 'articles-detail';
@@ -536,6 +537,12 @@ export interface ApiArticlesDetailArticlesDetail
     };
   };
   attributes: {
+    category: Schema.Attribute.Component<'categories.categories', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     coverImage: Schema.Attribute.Media<'images'> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -567,6 +574,12 @@ export interface ApiArticlesDetailArticlesDetail
       }>;
     seoTitle: Schema.Attribute.Text &
       Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    tag: Schema.Attribute.Component<'categories.categories', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1116,6 +1129,7 @@ export interface ApiServiceDetailPageServiceDetailPage
   extends Struct.CollectionTypeSchema {
   collectionName: 'service_detail_pages';
   info: {
+    description: '';
     displayName: 'service detail page';
     pluralName: 'service-detail-pages';
     singularName: 'service-detail-page';
@@ -1129,6 +1143,12 @@ export interface ApiServiceDetailPageServiceDetailPage
     };
   };
   attributes: {
+    benefit: Schema.Attribute.Component<'benefits.benefits', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     benefits: Schema.Attribute.JSON &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -1154,6 +1174,12 @@ export interface ApiServiceDetailPageServiceDetailPage
         };
       }>;
     howItWorksDetails: Schema.Attribute.JSON &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    HowitWorksDetails: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
