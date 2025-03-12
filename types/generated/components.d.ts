@@ -318,11 +318,13 @@ export interface ServiceProductServiceCard extends Struct.ComponentSchema {
 export interface SologanSologan extends Struct.ComponentSchema {
   collectionName: 'components_sologan_sologans';
   info: {
+    description: '';
     displayName: 'sologan';
     icon: 'bulletList';
   };
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }

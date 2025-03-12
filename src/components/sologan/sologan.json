@@ -2,7 +2,8 @@
   "collectionName": "components_sologan_sologans",
   "info": {
     "displayName": "sologan",
-    "icon": "bulletList"
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,6 +14,13 @@
     "description": {
       "type": "text",
       "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
