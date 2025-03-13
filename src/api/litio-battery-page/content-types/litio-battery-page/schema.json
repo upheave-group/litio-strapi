@@ -4,35 +4,65 @@
   "info": {
     "singularName": "litio-battery-page",
     "pluralName": "litio-battery-pages",
-    "displayName": "litio battery page"
+    "displayName": "litio battery page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "seoTitle": {
       "type": "text",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "seoDescription": {
       "type": "text",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "residential": {
       "type": "component",
       "repeatable": false,
       "component": "service.product-service-card",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "industrial": {
       "type": "component",
       "repeatable": false,
-      "component": "service.product-service-card"
+      "component": "service.product-service-card",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "title": {
       "type": "text",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

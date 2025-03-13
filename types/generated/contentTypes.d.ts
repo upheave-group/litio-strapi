@@ -805,12 +805,18 @@ export interface ApiLitioBatteryPageLitioBatteryPage
   extends Struct.SingleTypeSchema {
   collectionName: 'litio_battery_pages';
   info: {
+    description: '';
     displayName: 'litio battery page';
     pluralName: 'litio-battery-pages';
     singularName: 'litio-battery-page';
   };
   options: {
     draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -819,22 +825,49 @@ export interface ApiLitioBatteryPageLitioBatteryPage
     industrial: Schema.Attribute.Component<
       'service.product-service-card',
       false
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::litio-battery-page.litio-battery-page'
-    > &
-      Schema.Attribute.Private;
+    >;
     publishedAt: Schema.Attribute.DateTime;
     residential: Schema.Attribute.Component<
       'service.product-service-card',
       false
     > &
-      Schema.Attribute.Required;
-    seoDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    seoTitle: Schema.Attribute.Text & Schema.Attribute.Required;
-    title: Schema.Attribute.Text & Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seoDescription: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seoTitle: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
