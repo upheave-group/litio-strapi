@@ -621,6 +621,7 @@ export interface ApiArticlesDetailArticlesDetail
 export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
   collectionName: 'contact_uses';
   info: {
+    description: '';
     displayName: 'contact us';
     pluralName: 'contact-uses';
     singularName: 'contact-us';
@@ -643,9 +644,21 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     factoryPhoneNumber: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    factoryTitle: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -671,8 +684,20 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    showroomTitle: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     supportEmail: Schema.Attribute.Text &
       Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
