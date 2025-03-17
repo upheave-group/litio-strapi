@@ -113,6 +113,32 @@ export interface BenefitsBenefits extends Struct.ComponentSchema {
   };
 }
 
+export interface BusinessSectionBusinessSection extends Struct.ComponentSchema {
+  collectionName: 'components_business_section_business_sections';
+  info: {
+    displayName: 'businessSection';
+    icon: 'bulletList';
+  };
+  attributes: {
+    businesses: Schema.Attribute.Component<'businesses.businesses', true>;
+    description: Schema.Attribute.Text;
+    description1: Schema.Attribute.Text;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface BusinessesBusinesses extends Struct.ComponentSchema {
+  collectionName: 'components_businesses_businesses';
+  info: {
+    displayName: 'businesses';
+    icon: 'bulletList';
+  };
+  attributes: {
+    BusinessIcon: Schema.Attribute.Media<'images'>;
+    businessName: Schema.Attribute.Text;
+  };
+}
+
 export interface ButtonButton extends Struct.ComponentSchema {
   collectionName: 'components_button_buttons';
   info: {
@@ -244,6 +270,7 @@ export interface ProductsSectionProductsSection extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    description1: Schema.Attribute.Text;
     products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
     productsCard: Schema.Attribute.Component<
       'service.product-service-card',
@@ -356,6 +383,8 @@ declare module '@strapi/strapi' {
       'address.address': AddressAddress;
       'articles-section.articles-section': ArticlesSectionArticlesSection;
       'benefits.benefits': BenefitsBenefits;
+      'business-section.business-section': BusinessSectionBusinessSection;
+      'businesses.businesses': BusinessesBusinesses;
       'button.button': ButtonButton;
       'categories.categories': CategoriesCategories;
       'experience-section.experience-section': ExperienceSectionExperienceSection;

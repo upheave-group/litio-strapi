@@ -25,6 +25,9 @@
       "repeatable": true,
       "component": "service.product-service-card",
       "required": true
+    },
+    "description1": {
+      "type": "text"
     }
   }
 }

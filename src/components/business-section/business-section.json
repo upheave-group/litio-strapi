@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_business_section_business_sections",
+  "info": {
+    "displayName": "businessSection",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "description1": {
+      "type": "text"
+    },
+    "businesses": {
+      "displayName": "businesses",
+      "type": "component",
+      "repeatable": true,
+      "component": "businesses.businesses"
+    }
+  }
+}

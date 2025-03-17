@@ -98,6 +98,17 @@
         }
       },
       "component": "about-us-header-section.about-us-header-section"
+    },
+    "businessSection": {
+      "displayName": "businessSection",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "business-section.business-section"
     }
   }
 }

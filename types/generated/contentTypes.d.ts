@@ -414,6 +414,15 @@ export interface ApiAboutUsPageAboutUsPage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    businessSection: Schema.Attribute.Component<
+      'business-section.business-section',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_businesses_businesses",
+  "info": {
+    "displayName": "businesses",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "businessName": {
+      "type": "text"
+    },
+    "BusinessIcon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    }
+  }
+}
