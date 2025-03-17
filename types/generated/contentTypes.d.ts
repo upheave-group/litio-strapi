@@ -473,6 +473,49 @@ export interface ApiAboutUsPageAboutUsPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiArticlPageArticlPage extends Struct.SingleTypeSchema {
+  collectionName: 'articl_pages';
+  info: {
+    displayName: 'articlPage';
+    pluralName: 'articl-pages';
+    singularName: 'articl-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::articl-page.articl-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiArticlArticl extends Struct.CollectionTypeSchema {
   collectionName: 'articls';
   info: {
@@ -669,6 +712,12 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::contact-us.contact-us'
     >;
+    pageTitle: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     salesEmail: Schema.Attribute.Text &
       Schema.Attribute.Required &
@@ -1998,6 +2047,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
+      'api::articl-page.articl-page': ApiArticlPageArticlPage;
       'api::articl.articl': ApiArticlArticl;
       'api::articles-detail.articles-detail': ApiArticlesDetailArticlesDetail;
       'api::contact-us.contact-us': ApiContactUsContactUs;
